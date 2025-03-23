@@ -20,10 +20,16 @@ git clone https://github.com/restore-plus/classification-amazon-region-2
 ```
 
 Next, open the `classification-amazon-region-2` directory in the RStudio
-and install the examples package:
+and install the package:
 
 ``` r
 devtools::install(".")
+```
+
+You can also use [renv](https://rstudio.github.io/renv/):
+
+``` r
+renv::restore()
 ```
 
 ## Repository structure
