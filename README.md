@@ -1,7 +1,7 @@
 
 # Amazon Classification (Region 2)
 
-<img src=".github/images/sits_sticker.png" alt="SITS icon" align="right" height="150" width="150"/>
+<img src=".github/images/restoreplus_sticker.png" alt="Restore+ icon" align="right" height="150" width="150"/>
 
 <!-- badges: start -->
 
