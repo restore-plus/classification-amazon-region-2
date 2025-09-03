@@ -3,3 +3,9 @@
 .RData
 .Ruserdata
 .DS_Store
+*.bak
+*.done
+data/derived/mosaics/
+data/derived/masks/
+data/derived/cubes/
+data/derived/classifications/
