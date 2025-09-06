@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.4.3",
+    "Version": "4.5.1",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -135,8 +135,7 @@
       "NeedsCompilation": "yes",
       "Author": "Brian Ripley [aut, cre, cph], Bill Venables [aut, cph], Douglas M. Bates [ctb], Kurt Hornik [trl] (partial port ca 1998), Albrecht Gebhardt [trl] (partial port ca 1998), David Firth [ctb] (support functions for polr)",
       "Maintainer": "Brian Ripley <Brian.Ripley@R-project.org>",
-      "Repository": "RSPM",
-      "Encoding": "UTF-8"
+      "Repository": "CRAN"
     },
     "R6": {
       "Package": "R6",
@@ -2080,8 +2079,7 @@
       "NeedsCompilation": "yes",
       "Author": "Deepayan Sarkar [aut, cre] (<https://orcid.org/0000-0003-4107-1553>), Felix Andrews [ctb], Kevin Wright [ctb] (documentation), Neil Klepeis [ctb], Johan Larsson [ctb] (miscellaneous improvements), Zhijian (Jason) Wen [cph] (filled contour code), Paul Murrell [ctb], Stefan Eng [ctb] (violin plot improvements), Achim Zeileis [ctb] (modern colors), Alexandre Courtiol [ctb] (generics for larrows, lpolygon, lrect and lsegments)",
       "Maintainer": "Deepayan Sarkar <deepayan.sarkar@r-project.org>",
-      "Repository": "RSPM",
-      "Encoding": "UTF-8"
+      "Repository": "CRAN"
     },
     "lazyeval": {
       "Package": "lazyeval",
@@ -3384,14 +3382,14 @@
       "LinkingTo": [
         "Rcpp"
       ],
-      "Author": "First Last [aut, cre] (YOUR-ORCID-ID)",
+      "Author": "First Last [aut, cre] (ORCID: YOUR-ORCID-ID)",
       "Maintainer": "First Last <first.last@example.com>",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "restore-plus",
       "RemoteRepo": "restore-utils",
       "RemoteRef": "main",
-      "RemoteSha": "e1690fce80b9de2c214fc4d2143300f68207b81c"
+      "RemoteSha": "a8e6a7f2dc4d15acd34f84e3d05027e6ace19f1d"
     },
     "rlang": {
       "Package": "rlang",
@@ -3926,10 +3924,10 @@
       "Author": "Rolf Simoes [aut], Gilberto Camara [aut, cre, ths], Felipe Souza [aut], Felipe Carlos [aut], Lorena Santos [ctb], Charlotte Pelletier [ctb], Estefania Pizarro [ctb], Karine Ferreira [ctb, ths], Alber Sanchez [ctb], Alexandre Assuncao [ctb], Daniel Falbel [ctb], Gilberto Queiroz [ctb], Johannes Reiche [ctb], Pedro Andrade [ctb], Pedro Brito [ctb], Renato Assuncao [ctb], Ricardo Cartaxo [ctb]",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
-      "RemoteUsername": "e-sensing",
+      "RemoteUsername": "M3nin0",
       "RemoteRepo": "sits",
-      "RemoteRef": "dev",
-      "RemoteSha": "b20e3cb84232672e5fadf4607eab488ec2e5fe53"
+      "RemoteRef": "ogh-reg",
+      "RemoteSha": "e36d0bda0e3cc4ebc1aa4c30037ee0869c62af7c"
     },
     "slider": {
       "Package": "slider",
