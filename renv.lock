@@ -3559,7 +3559,8 @@
         "sits (>= 1.5.2)",
         "Rcpp (>= 1.1.0)",
         "future",
-        "furrr"
+        "furrr",
+        "withr"
       ],
       "LinkingTo": [
         "Rcpp"
@@ -3571,7 +3572,7 @@
       "RemoteUsername": "restore-plus",
       "RemoteRepo": "restore-utils",
       "RemoteRef": "main",
-      "RemoteSha": "8ee50caa41e204bb8b98be350c8873db4bae354f"
+      "RemoteSha": "cd0a6fd39b748ca58f2e06f3718a91043c5b8a6e"
     },
     "rlang": {
       "Package": "rlang",
