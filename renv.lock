@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.5.1",
+    "Version": "4.4.1",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -2517,7 +2517,8 @@
       "NeedsCompilation": "no",
       "Author": "Henrik Bengtsson [aut, cre, cph]",
       "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
-      "Repository": "CRAN"
+      "Repository": "RSPM",
+      "Encoding": "UTF-8"
     },
     "logger": {
       "Package": "logger",
@@ -3565,14 +3566,14 @@
       "LinkingTo": [
         "Rcpp"
       ],
-      "Author": "First Last [aut, cre] (ORCID: YOUR-ORCID-ID)",
+      "Author": "First Last [aut, cre] (YOUR-ORCID-ID)",
       "Maintainer": "First Last <first.last@example.com>",
       "RemoteType": "github",
       "RemoteHost": "api.github.com",
       "RemoteUsername": "restore-plus",
       "RemoteRepo": "restore-utils",
       "RemoteRef": "main",
-      "RemoteSha": "cd0a6fd39b748ca58f2e06f3718a91043c5b8a6e"
+      "RemoteSha": "5c319551e4f5a109a3321857390605acc25d0f3e"
     },
     "rlang": {
       "Package": "rlang",
