@@ -22,7 +22,7 @@ mask_version <- "v1"
 classification_version <- "samples-v2-eco2"
 
 # Classification - years
-classification_year <- 2017
+classification_year <- 2021
 
 # Hardware - Multicores
 multicores <- 60
@@ -48,13 +48,13 @@ classification_dir <- (
 #
 
 # PRODES data
-prodes <- load_prodes_2017(multicores = multicores, memsize = memsize)
+prodes <- load_prodes_2021(multicores = multicores, memsize = memsize)
 
 # Terraclass 2022
 terraclass_2022 <- load_terraclass_2022(multicores = multicores, memsize = memsize)
 
 # Terraclass
-terraclass_2018 <- load_terraclass_2018(multicores = multicores, memsize = memsize)
+terraclass_2020 <- load_terraclass_2020(multicores = multicores, memsize = memsize)
 
 
 #
@@ -74,7 +74,8 @@ eco3_class <- sits_clean(
   multicores   = multicores,
   memsize      = memsize,
   output_dir   = output_dir,
-  version      = "mask-clean-step1"
+  version      = "mask-clean-step1",
+  progress     = TRUE
 )
 
 
@@ -116,7 +117,7 @@ eco3_mask <- restoreutils::reclassify_rule3_pasture_wetland(
 # Rule 4
 eco3_mask <- restoreutils::reclassify_rule4_silviculture(
   cube       = eco3_mask,
-  mask       = terraclass_2018,
+  mask       = terraclass_2020,
   multicores = multicores,
   memsize    = memsize,
   output_dir = output_dir,
@@ -126,7 +127,7 @@ eco3_mask <- restoreutils::reclassify_rule4_silviculture(
 # Rule 5
 eco3_mask <- restoreutils::reclassify_rule5_silviculture_pasture(
   cube       = eco3_mask,
-  mask       = terraclass_2018,
+  mask       = terraclass_2020,
   multicores = multicores,
   memsize    = memsize,
   output_dir = output_dir,
@@ -136,7 +137,7 @@ eco3_mask <- restoreutils::reclassify_rule5_silviculture_pasture(
 # Rule 6
 eco3_mask <- restoreutils::reclassify_rule6_semiperennial(
   cube       = eco3_mask,
-  mask       = terraclass_2018,
+  mask       = terraclass_2020,
   multicores = multicores,
   memsize    = memsize,
   output_dir = output_dir,
@@ -146,7 +147,7 @@ eco3_mask <- restoreutils::reclassify_rule6_semiperennial(
 # Rule 7
 eco3_mask <- restoreutils::reclassify_rule7_semiperennial_pasture(
   cube       = eco3_mask,
-  mask       = terraclass_2018,
+  mask       = terraclass_2020,
   multicores = multicores,
   memsize    = memsize,
   output_dir = output_dir,
@@ -156,7 +157,7 @@ eco3_mask <- restoreutils::reclassify_rule7_semiperennial_pasture(
 # Rule 8
 eco3_mask <- restoreutils::reclassify_rule8_annual_agriculture(
   cube       = eco3_mask,
-  mask       = terraclass_2018,
+  mask       = terraclass_2020,
   multicores = multicores,
   memsize    = memsize,
   output_dir = output_dir,
@@ -166,7 +167,7 @@ eco3_mask <- restoreutils::reclassify_rule8_annual_agriculture(
 # Rule 9
 eco3_mask <- restoreutils::reclassify_rule9_minning(
   cube       = eco3_mask,
-  mask       = terraclass_2018,
+  mask       = terraclass_2020,
   multicores = multicores,
   memsize    = memsize,
   output_dir = output_dir,
@@ -176,7 +177,7 @@ eco3_mask <- restoreutils::reclassify_rule9_minning(
 # Rule 10
 eco3_mask <- restoreutils::reclassify_rule10_urban_area(
   cube       = eco3_mask,
-  mask       = terraclass_2018,
+  mask       = terraclass_2020,
   multicores = multicores,
   memsize    = memsize,
   output_dir = output_dir,
@@ -186,7 +187,7 @@ eco3_mask <- restoreutils::reclassify_rule10_urban_area(
 # Rule 11
 eco3_mask <- restoreutils::reclassify_rule11_water(
   cube       = eco3_mask,
-  mask       = terraclass_2018,
+  mask       = terraclass_2020,
   multicores = multicores,
   memsize    = memsize,
   output_dir = output_dir,

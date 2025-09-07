@@ -22,7 +22,7 @@ mask_version <- "v1"
 classification_version <- "samples-v2-eco2"
 
 # Classification - years
-classification_year <- 2017
+classification_year <- 2019
 
 # Hardware - Multicores
 multicores <- 60
@@ -48,7 +48,7 @@ classification_dir <- (
 #
 
 # PRODES data
-prodes <- load_prodes_2017(multicores = multicores, memsize = memsize)
+prodes <- load_prodes_2019(multicores = multicores, memsize = memsize)
 
 # Terraclass 2022
 terraclass_2022 <- load_terraclass_2022(multicores = multicores, memsize = memsize)
@@ -74,7 +74,8 @@ eco3_class <- sits_clean(
   multicores   = multicores,
   memsize      = memsize,
   output_dir   = output_dir,
-  version      = "mask-clean-step1"
+  version      = "mask-clean-step1",
+  progress     = TRUE
 )
 
 

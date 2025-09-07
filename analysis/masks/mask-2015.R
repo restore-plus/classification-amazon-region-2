@@ -25,10 +25,10 @@ classification_version <- "samples-v2-eco2"
 classification_year <- 2015
 
 # Hardware - Multicores
-multicores <- 8
+multicores <- 60
 
 # Hardware - Memory size
-memsize <- 16
+memsize <- 200
 
 
 #
