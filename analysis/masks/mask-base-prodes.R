@@ -10,8 +10,8 @@ options(timeout = max(600, getOption("timeout")))
 #
 # General definitions
 #
-memsize    <- 10
-multicores <- 16
+memsize    <- 200
+multicores <- 60
 
 version <- "v2"
 
@@ -28,7 +28,7 @@ restoreutils::prepare_prodes(
 
 #
 # 2) Generate forest mask
-# 
+#
 # Note: We start generating masks in 2023, as 2024 is the most recent data, and
 #       all forest there is the current forest. So, there is no requirements for
 #       extra data transformations

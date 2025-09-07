@@ -13,6 +13,6 @@ options(timeout = max(600, getOption("timeout")))
 restoreutils::prepare_terraclass(
     years      = c(2008, 2010, 2012, 2014, 2018, 2020, 2022),
     region_id  = 2,
-    multicores = 3
+    multicores = 7
 )
 
