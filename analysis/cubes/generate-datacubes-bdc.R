@@ -15,13 +15,13 @@ cubes_dir <- restoreutils::project_cubes_dir()
 cube_bands <- c("BLUE", "GREEN", "RED", "NIR08", "SWIR16", "SWIR22", "CLOUD")
 
 # Processing years
-regularization_years <- 2015:2024
+regularization_years <- 2020:2024 # 2015:2019
 
 # Hardware - Multicores
-multicores <- 60
+multicores <- 35
 
 # Hardware - Memory size
-memsize <- 220
+memsize <- 320
 
 
 #
@@ -29,7 +29,8 @@ memsize <- 220
 #
 eco_region_roi <- restoreutils::roi_ecoregions(
   region_id = 2,
-  crs = restoreutils::crs_bdc()
+  crs       = restoreutils::crs_bdc(),
+  as_convex = TRUE
 )
 
 
@@ -41,6 +42,9 @@ bdc_tiles <- sits_roi_to_tiles(
   crs = restoreutils::crs_bdc(),
   grid_system = "BDC_MD_V2"
 )
+
+bdc_tiles_bbox <- sf::st_union(bdc_tiles) |>
+  sf::st_bbox()
 
 
 #
@@ -67,22 +71,64 @@ for (regularization_year in regularization_years) {
     ))) |>
     dplyr::pull()
 
+  # Define year tiles
+  current_year_tiles <- bdc_tiles
+
+  # Loading existing cube
+  existing_cube <- tryCatch(
+    {
+      sits_cube(
+        source      = "BDC",
+        collection  = "LANDSAT-OLI-16D",
+        data_dir    = cube_year_dir,
+        progress    = FALSE
+      )
+    },
+    error = function(e) {
+      return(NULL)
+    }
+  )
+
+  # Inform user about the current number of tiles
+  print(paste0('Total number of tiles: ', nrow(current_year_tiles)))
+
+  if (!is.null(existing_cube)) {
+    # Getting tiles
+    existing_tiles <- unique(existing_cube[["tile"]])
+
+    # Removing all existing tiles
+    current_year_tiles <- dplyr::filter(current_year_tiles, !(.data[["tile_id"]] %in% existing_tiles))
+
+    # Inform user
+    print(paste0('Existing tiles: ', length(existing_tiles)))
+  }
+
+  # Inform user about the current number of tiles to be processed
+  # (some can be removed thanks to the existing data)
+  print(paste0('Tiles to process: ', nrow(current_year_tiles)))
+
   # Regularize tile by tile
-  purrr::map(bdc_tiles[["tile_id"]], function(tile) {
+  purrr::map(current_year_tiles[["tile_id"]], function(tile) {
     print(tile)
 
-    # Load cube
-    cube_year <- sits_cube(
-      source      = "BDC",
-      collection  = "LANDSAT-OLI-16D",
-      tiles       = tile,
-      grid_system = "BDC_MD_V2",
-      start_date  = cube_start_date,
-      end_date    = cube_end_date,
-      bands       = cube_bands
+    # Load cube with tryCatch error handling
+    cube_year <- tryCatch(
+      {
+        sits_cube(
+          source      = "BDC",
+          collection  = "LANDSAT-OLI-16D",
+          tiles       = tile,
+          start_date  = cube_start_date,
+          end_date    = cube_end_date,
+          bands       = cube_bands
+        )
+      },
+      error = function(e) {
+        return(NULL)
+      }
     )
 
-    if (nrow(cube_year) == 0) {
+    if (is.null(cube_year) || nrow(cube_year) == 0) {
       return(NULL)
     }
 
@@ -90,7 +136,7 @@ for (regularization_year in regularization_years) {
     cube_year_reg <- sits_regularize(
       cube        = cube_year,
       period      = "P1M",
-      res         = 300,
+      res         = 30,
       multicores  = multicores,
       output_dir  = cube_year_dir,
       timeline    = cube_timeline
@@ -101,11 +147,11 @@ for (regularization_year in regularization_years) {
     }
 
     # Generate indices
-    cube_year_reg <- restoreutils::cube_generate_indices(
-      cube = cube_year_reg,
+    cube_year_reg <- restoreutils::cube_generate_indices_bdc(
+      cube       = cube_year_reg,
       output_dir = cube_year_dir,
       multicores = multicores,
-      memsize = memsize
+      memsize    = memsize
     )
   })
 
