@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.4.1",
+    "Version": "4.4.3",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -24,7 +24,7 @@
       "NeedsCompilation": "no",
       "Author": "Dirk Eddelbuettel [aut, cre] (<https://orcid.org/0000-0001-6419-907X>), John W. Emerson [aut], Michael J. Kane [aut] (<https://orcid.org/0000-0003-1899-6662>)",
       "Maintainer": "Dirk Eddelbuettel <edd@debian.org>",
-      "Repository": "RSPM",
+      "Repository": "https://packagemanager.posit.co/cran/__linux__/jammy/latest",
       "Encoding": "UTF-8"
     },
     "DBI": {
@@ -1408,7 +1408,7 @@
       "NeedsCompilation": "no",
       "Author": "Davis Vaughan [aut, cre], Matt Dancho [aut], RStudio [cph, fnd]",
       "Maintainer": "Davis Vaughan <davis@rstudio.com>",
-      "Repository": "https://packagemanager.posit.co/cran/__linux__/noble/latest"
+      "Repository": "https://packagemanager.posit.co/cran/__linux__/jammy/latest"
     },
     "future": {
       "Package": "future",
@@ -1447,7 +1447,7 @@
       "NeedsCompilation": "no",
       "Author": "Henrik Bengtsson [aut, cre, cph] (ORCID: <https://orcid.org/0000-0002-7579-5165>)",
       "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
-      "Repository": "https://packagemanager.posit.co/cran/__linux__/noble/latest"
+      "Repository": "https://packagemanager.posit.co/cran/__linux__/jammy/latest"
     },
     "gdalcubes": {
       "Package": "gdalcubes",
@@ -1490,7 +1490,7 @@
       "SystemRequirements": "GDAL (>= 2.0.1), PROJ (>= 4.8.0), netcdf, sqlite3",
       "Author": "Marius Appel [aut, cre] (<https://orcid.org/0000-0001-5281-3896>), Edzer Pebesma [ctb] (<https://orcid.org/0000-0001-8049-7069>), Roger Bivand [ctb], Jeroen Ooms [ctb] (<https://orcid.org/0000-0002-4035-0289>), Lewis Van Winkle [cph], Ole Christian Eidheim [cph], Howard Hinnant [cph], Adrian Colomitchi [cph], Florian Dang [cph], Paul Thompson [cph], Tomasz Kamiński [cph], Dropbox, Inc. [cph]",
       "Maintainer": "Marius Appel <marius.appel@hs-bochum.de>",
-      "Repository": "RSPM"
+      "Repository": "https://packagemanager.posit.co/cran/__linux__/jammy/latest"
     },
     "generics": {
       "Package": "generics",
@@ -1622,7 +1622,7 @@
       "NeedsCompilation": "no",
       "Author": "Henrik Bengtsson [aut, cre, cph], Davis Vaughan [ctb]",
       "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
-      "Repository": "https://packagemanager.posit.co/cran/__linux__/noble/latest"
+      "Repository": "https://packagemanager.posit.co/cran/__linux__/jammy/latest"
     },
     "glue": {
       "Package": "glue",
@@ -2519,7 +2519,7 @@
       "NeedsCompilation": "no",
       "Author": "Henrik Bengtsson [aut, cre, cph]",
       "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
-      "Repository": "https://packagemanager.posit.co/cran/__linux__/noble/latest",
+      "Repository": "https://packagemanager.posit.co/cran/__linux__/jammy/latest",
       "Encoding": "UTF-8"
     },
     "logger": {
@@ -2868,7 +2868,7 @@
       "NeedsCompilation": "yes",
       "Author": "David Pierce [aut, cre] (<https://orcid.org/0000-0002-2453-9030>)",
       "Maintainer": "David Pierce <dpierce@ucsd.edu>",
-      "Repository": "RSPM",
+      "Repository": "https://packagemanager.posit.co/cran/__linux__/jammy/latest",
       "Encoding": "UTF-8"
     },
     "ntfy": {
@@ -2962,7 +2962,7 @@
       "NeedsCompilation": "yes",
       "Author": "Henrik Bengtsson [aut, cre, cph] (ORCID: <https://orcid.org/0000-0002-7579-5165>), Mike Cheng [ctb]",
       "Maintainer": "Henrik Bengtsson <henrikb@braju.com>",
-      "Repository": "https://packagemanager.posit.co/cran/__linux__/noble/latest"
+      "Repository": "https://packagemanager.posit.co/cran/__linux__/jammy/latest"
     },
     "pillar": {
       "Package": "pillar",
@@ -3575,7 +3575,7 @@
       "RemoteUsername": "restore-plus",
       "RemoteRepo": "restore-utils",
       "RemoteRef": "main",
-      "RemoteSha": "40adb4d266abaebe403fdb6f015f3f685b30269d"
+      "RemoteSha": "5cad894ea011a684ed3fa179363e1c41059162f0"
     },
     "rlang": {
       "Package": "rlang",
