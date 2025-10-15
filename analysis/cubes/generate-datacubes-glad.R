@@ -15,16 +15,16 @@ cubes_dir <- restoreutils::project_cubes_dir()
 cube_bands <- c("BLUE", "GREEN", "RED", "NIR" , "SWIR1", "SWIR2")
 
 # Processing years
-regularization_years <- c(2000, 2002, 2005, 2007, 2010)
+regularization_years <- c(2010)
 
 # Hardware - Multicores (Download)
-multicores <- 1
+multicores <- 10
 
 # Hardware - Multicores (Regularize)
-multicores_reg <- 30
+multicores_reg <- 40
 
 # Hardware - Memory size
-memsize <- 200
+memsize <- 172
 
 
 #
