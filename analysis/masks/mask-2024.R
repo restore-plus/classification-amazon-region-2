@@ -30,6 +30,14 @@ multicores <- 35
 # Hardware - Memory size
 memsize <- 160
 
+# ROI
+eco_region_roi <- restoreutils::roi_ecoregions(
+  region_id  = 2,
+  crs        = restoreutils::crs_bdc(),
+  as_union   = TRUE,
+  use_buffer = TRUE
+)
+
 
 #
 # 1. Define output directory
@@ -203,6 +211,16 @@ eco3_mask <- restoreutils::reclassify_rule12_non_forest(
   memsize    = memsize,
   output_dir = output_dir,
   version    = "mask-prodes-step13"
+)
+
+# Crop
+eco3_mask <- sits_mosaic(
+  cube       = eco3_mask,
+  crs        = restoreutils::crs_bdc(),
+  roi        = eco_region_roi,
+  multicores = multicores,
+  output_dir = output_dir,
+  version    = "mask-prodes-step14"
 )
 
 
