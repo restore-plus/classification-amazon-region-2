@@ -19,7 +19,7 @@ mask_tiles <- c()
 mask_version <- "rules-latest"
 
 # Classification - version
-classification_version <- "samples-v1-2010-eco2"
+classification_version <- "samples-v2-noperene-eco3"
 
 # Classification - years
 classification_year <- 2016
