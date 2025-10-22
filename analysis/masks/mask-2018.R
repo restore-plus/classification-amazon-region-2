@@ -19,7 +19,7 @@ mask_tiles <- c()
 mask_version <- "rules-latest"
 
 # Classification - version
-classification_version <- "samples-v2-noperene-eco3"
+classification_version <- "samples-v2-noperene-eco2"
 
 # Classification - years
 classification_year <- 2018
@@ -278,6 +278,15 @@ eco_mask <- sits_mosaic(
   version    = "step21"
 )
 
+# Generate stats
+cube_save_area_stats(
+  cube       = eco_mask,
+  multicores = multicores,
+  memsize    = memsize,
+  res        = 30,
+  output_dir = output_dir,
+  version    = "step21"
+)
 
 #
 # 6. Save cube object

@@ -292,6 +292,16 @@ eco_mask <- restoreutils::reclassify_rule19_perene(
   version    = "step22"
 )
 
+eco_mask <- restoreutils::reclassify_rule26_silviculture_pasture_vs(
+  cube       = eco_mask,
+  mask       = terraclass_2008,
+  multicores = multicores,
+  memsize    = memsize,
+  output_dir = output_dir,
+  version    = "step23"
+)
+
+
 # Crop
 eco_mask <- sits_mosaic(
   cube       = eco_mask,
@@ -299,7 +309,17 @@ eco_mask <- sits_mosaic(
   roi        = eco_region_roi,
   multicores = multicores,
   output_dir = output_dir,
-  version    = "step23"
+  version    = "step24"
+)
+
+# Generate stats
+cube_save_area_stats(
+  cube       = eco_mask,
+  multicores = multicores,
+  memsize    = memsize,
+  res        = 30,
+  output_dir = output_dir,
+  version    = "step24"
 )
 
 

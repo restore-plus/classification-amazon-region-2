@@ -19,7 +19,7 @@ mask_tiles <- c()
 mask_version <- "rules-latest"
 
 # Classification - version
-classification_version <- "samples-v2-noperene-eco3"
+classification_version <- "samples-v2-noperene-eco2"
 
 # Classification - years
 classification_year <- 2022
@@ -274,6 +274,16 @@ eco_mask <- sits_mosaic(
   crs        = restoreutils::crs_bdc(),
   roi        = eco_region_roi,
   multicores = multicores,
+  output_dir = output_dir,
+  version    = "step21"
+)
+
+# Generate stats
+cube_save_area_stats(
+  cube       = eco_mask,
+  multicores = multicores,
+  memsize    = memsize,
+  res        = 30,
   output_dir = output_dir,
   version    = "step21"
 )
