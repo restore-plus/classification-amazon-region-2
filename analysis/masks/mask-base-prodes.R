@@ -9,7 +9,7 @@ multicores <- 35
 
 version <- "v2"
 
-year_to_prepare <- 2024:2008
+year_to_prepare <- 2024:2000
 
 #
 # 1 Generate forest mask
