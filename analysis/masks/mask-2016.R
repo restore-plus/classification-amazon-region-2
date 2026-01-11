@@ -73,7 +73,6 @@ eco_class <- load_restore_map_bdc(
   version    = classification_version
 )
 
-
 #
 # 4. Clean data to reduce noise
 #
@@ -218,13 +217,23 @@ eco_mask <- restoreutils::reclassify_rule21_pasture_annual_agriculture(
   version        = "step15"
 )
 
+eco_mask <- restoreutils::reclassify_rule28_secundary_vegetation_tc(
+  cube           = eco_mask,
+  mask           = NULL,
+  multicores     = multicores,
+  memsize        = memsize,
+  output_dir     = output_dir,
+  rarg_year      = classification_year,
+  version        = "step16"
+)
+
 eco_mask <- restoreutils::reclassify_rule2_current_deforestation(
   cube       = eco_mask,
   mask       = prodes,
   multicores = multicores,
   memsize    = memsize,
   output_dir = output_dir,
-  version    = "step16",
+  version    = "step17",
   rarg_year  = classification_year # <- rule argument: Deforestation year
 )
 
@@ -234,7 +243,7 @@ eco_mask <- restoreutils::reclassify_rule12_non_forest(
   multicores = multicores,
   memsize    = memsize,
   output_dir = output_dir,
-  version    = "step17"
+  version    = "step18"
 )
 
 eco_mask <- restoreutils::contextual_cleaner(
@@ -245,7 +254,7 @@ eco_mask <- restoreutils::contextual_cleaner(
   multicores   = multicores,
   memsize      = memsize,
   output_dir   = output_dir,
-  version      = "step18"
+  version      = "step19"
 )
 
 eco_mask <- restoreutils::reclassify_rule11_water(
@@ -254,7 +263,7 @@ eco_mask <- restoreutils::reclassify_rule11_water(
   multicores = multicores,
   memsize    = memsize,
   output_dir = output_dir,
-  version    = "step19"
+  version    = "step20"
 )
 
 eco_mask <- restoreutils::reclassify_rule19_perene(
@@ -264,7 +273,7 @@ eco_mask <- restoreutils::reclassify_rule19_perene(
   memsize    = memsize,
   output_dir = output_dir,
   rarg_year  = classification_year,
-  version    = "step20"
+  version    = "step21"
 )
 
 
@@ -275,17 +284,7 @@ eco_mask <- sits_mosaic(
   roi        = eco_region_roi,
   multicores = multicores,
   output_dir = output_dir,
-  version    = "step21"
-)
-
-# Generate stats
-cube_save_area_stats(
-  cube       = eco_mask,
-  multicores = multicores,
-  memsize    = memsize,
-  res        = 30,
-  output_dir = output_dir,
-  version    = "step21"
+  version    = "step22"
 )
 
 
