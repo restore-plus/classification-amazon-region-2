@@ -9,27 +9,18 @@ multicores <- 35
 
 version <- "v2"
 
-years_to_prepare <- c(2000:2007, 2024)
-years_to_mask <- c(2000:2024)
+year_to_prepare <- 2024:2008
 
 #
-# 1) Download Prodes data
+# 1 Generate forest mask
 #
-restoreutils::prepare_prodes(
-  region_id = 2,
-  years     = years_to_prepare
+prepare_prodes(
+  region_id          = 2,
+  years              = year_to_prepare,
+  version            = version,
+  multicores         = multicores,
+  memsize            = memsize,
+  nonforest_mask     = TRUE,
+  nonforest_complete = TRUE,
+  fix_pre_aggregation_prodes = TRUE
 )
-
-
-#
-# 2) Generate forest mask
-#
-purrr::map(years_to_mask, function(mask_year) {
-  restoreutils::prodes_generate_mask(
-    target_year    = mask_year,
-    version        = version,
-    multicores     = multicores,
-    memsize        = memsize,
-    nonforest_mask = TRUE
-  )
-})
