@@ -111,7 +111,7 @@ files[files[["year"]] %in% perene_mask_years, "path"] <- unlist(perene_outfiles)
 #
 
 # Define years to apply
-vs_pasture_years <- 2019:2021 # seq.int(from = 2001, to = 2021, by = 1)
+vs_pasture_years <- seq.int(from = 2001, to = 2021, by = 1)
 vs_version <- "temporal-mask-3"
 
 vs_class_name <- "vegetacao_secundaria"
