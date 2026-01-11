@@ -30,7 +30,7 @@ memsize <- 172
 #
 # 1. Load eco region roi
 #
-eco_region_roi <- restoreutils::roi_ecoregions(
+eco_region_roi <- restoreutils::roi_amazon_regions(
   region_id = 2,
   crs       = restoreutils::crs_bdc(),
   as_convex = TRUE
