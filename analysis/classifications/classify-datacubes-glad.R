@@ -13,10 +13,10 @@ base_cubes_dir <- restoreutils::project_cubes_dir()
 base_classifications_dir <- restoreutils::project_classifications_dir()
 
 # Model
-model_version <- "random-forest-model_eco3-2010"
+model_version <- "rf-samples_amazon_landsat_2010"
 
 # Classification - version
-classification_version <- "samples-v1-2010-eco2"
+classification_version <- "rf-samples_amazon_landsat_2010"
 
 # Classification - years
 regularization_years <- 2000:2014

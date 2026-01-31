@@ -15,7 +15,7 @@ cubes_dir <- restoreutils::project_cubes_dir()
 cube_bands <- c("BLUE", "GREEN", "RED", "NIR08", "SWIR16", "SWIR22", "CLOUD")
 
 # Processing years
-regularization_years <- 2020:2024 # 2015:2019
+regularization_years <- 2015:2022
 
 # Hardware - Multicores
 multicores <- 35
@@ -27,7 +27,7 @@ memsize <- 320
 #
 # 1. Load eco region roi
 #
-eco_region_roi <- restoreutils::roi_amazon_regions(
+eco_region_roi <- restoreutils::roi_ecoregions(
   region_id = 2,
   crs       = restoreutils::crs_bdc(),
   as_convex = TRUE
