@@ -2,7 +2,7 @@ library(sits)
 library(restoreutils)
 
 # ---- Configurations ----
-base_data_dir <- fs::path("data/derived/")
+base_data_dir <- fs::path("data/derived/masks/rules-latest/results/remap")
 
 labels <- restoreutils::labels_amazon_mcti()
 labels_inverse <- setNames(names(labels), labels)
